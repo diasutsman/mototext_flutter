@@ -1,5 +1,5 @@
 name: mototext_wifi
-description: Flutter controller for the user's ESP32 16x2 I2C LCD over the ESP32 Wi-Fi access point.
+description: Flutter controller for the user's ESP32 16x2 I2C LCD over Bluetooth Low Energy.
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -16,6 +16,26 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.14.4
+  flutter_native_splash: ^2.4.8
+
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: "assets/icon/app_icon.png"
+  min_sdk_android: 21
+  adaptive_icon_background: "#0D1217"
+  adaptive_icon_foreground: "assets/icon/app_icon_foreground.png"
+
+flutter_native_splash:
+  color: "#0D1217"
+  image: "assets/icon/splash_logo.png"
+  android_12:
+    image: "assets/icon/splash_logo.png"
+    icon_background_color: "#0D1217"
+    color: "#0D1217"
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/icon/
