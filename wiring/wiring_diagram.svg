@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#071522"/><stop offset="1" stop-color="#102c42"/></linearGradient>
+  <linearGradient id="pcb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14513e"/><stop offset="1" stop-color="#0b3027"/></linearGradient>
+  <style>
+    .title{font:800 34px Arial,sans-serif;fill:#f4fbff}.subtitle{font:18px Arial,sans-serif;fill:#a8c5d7}
+    .heading{font:700 22px Arial,sans-serif;fill:#eaf7ff}.body{font:17px Arial,sans-serif;fill:#dbeaf4}.small{font:14px Arial,sans-serif;fill:#b9d0df}
+    .pin{font:700 16px Arial,sans-serif;fill:#ffffff}.tablehead{font:700 17px Arial,sans-serif;fill:#eaf7ff}.tablerow{font:16px Arial,sans-serif;fill:#dae8f0}
+  </style>
+</defs>
+<rect width="1600" height="1120" fill="url(#bg)"/>
+<text x="52" y="62" class="title">MotoAlert | Wiring Diagram</text>
+<text x="54" y="96" class="subtitle">ESP32 DevKit V1 + HC-SR04 + I2C LCD 16×2 + Android BLE alerts</text>
+<rect x="45" y="125" width="1510" height="630" rx="22" fill="#0a1c2a" stroke="#31536b" stroke-width="2"/>
+<!-- ESP32 module -->
+<rect x="190" y="185" width="300" height="505" rx="22" fill="url(#pcb)" stroke="#58d9b1" stroke-width="2.5"/>
+<rect x="250" y="220" width="180" height="115" rx="9" fill="#192c3a" stroke="#7894a7" stroke-width="2"/>
+<rect x="278" y="238" width="124" height="70" rx="6" fill="#b7c6cd" stroke="#324957" stroke-width="2"/>
+<text x="340" y="364" text-anchor="middle" class="heading">ESP32 DevKit V1</text>
+<text x="340" y="388" text-anchor="middle" class="small">Bluetooth LE + controller</text>
+<!-- pin marks -->
+<g fill="#e6c86f" stroke="#6d5830" stroke-width="1">
+ <rect x="490" y="391" width="13" height="18" rx="2"/><rect x="490" y="436" width="13" height="18" rx="2"/>
+ <rect x="490" y="486" width="13" height="18" rx="2"/><rect x="490" y="536" width="13" height="18" rx="2"/>
+ <rect x="490" y="563" width="13" height="18" rx="2"/><rect x="490" y="603" width="13" height="18" rx="2"/>
+</g>
+<g class="pin" text-anchor="end">
+ <text x="472" y="406">VIN / 5V</text><text x="472" y="451">GND</text><text x="472" y="501">GPIO21</text>
+ <text x="472" y="551">GPIO22</text><text x="472" y="578">GPIO25</text><text x="472" y="618">GPIO26</text>
+</g>
+<!-- LCD panel -->
+<rect x="950" y="185" width="440" height="210" rx="16" fill="#203b2b" stroke="#6da67a" stroke-width="2"/>
+<rect x="995" y="226" width="350" height="100" rx="8" fill="#a9bd7a" stroke="#273b28" stroke-width="6"/>
+<text x="1170" y="263" text-anchor="middle" style="font:700 22px monospace;fill:#233a26">JAGA JARAK</text>
+<text x="1170" y="299" text-anchor="middle" style="font:700 22px monospace;fill:#233a26">MOTOALERT</text>
+<text x="1170" y="356" text-anchor="middle" class="heading">LCD 1602 I2C</text>
+<text x="1170" y="380" text-anchor="middle" class="small">Address default 0x27, try 0x3F if needed</text>
+<!-- HC SR04 -->
+<rect x="950" y="455" width="440" height="245" rx="16" fill="#193958" stroke="#4a96d9" stroke-width="2"/>
+<circle cx="1070" cy="525" r="44" fill="#17232f" stroke="#9fb6c9" stroke-width="5"/>
+<circle cx="1070" cy="525" r="28" fill="#6c8798" stroke="#d0e6f2" stroke-width="3"/>
+<circle cx="1245" cy="525" r="44" fill="#17232f" stroke="#9fb6c9" stroke-width="5"/>
+<circle cx="1245" cy="525" r="28" fill="#6c8798" stroke="#d0e6f2" stroke-width="3"/>
+<text x="1170" y="602" text-anchor="middle" class="heading">HC-SR04 Ultrasonic</text>
+<text x="1170" y="628" text-anchor="middle" class="body">VCC · TRIG · ECHO · GND</text>
+<text x="1170" y="658" text-anchor="middle" class="small">Distance reading goes to the app via BLE</text>
+<!-- Wiring lines, drawn behind labels -->
+<g fill="none" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+ <path d="M503 400 H590 V245 H950" stroke="#ff5d67"/>
+ <path d="M503 400 H620 V475 H950" stroke="#ff5d67" stroke-dasharray="8 7"/>
+ <path d="M503 445 H650 V282 H950" stroke="#aab8c5"/>
+ <path d="M503 445 H680 V500 H950" stroke="#aab8c5" stroke-dasharray="8 7"/>
+ <path d="M503 495 H720 V319 H950" stroke="#48d7a4"/>
+ <path d="M503 545 H770 V356 H950" stroke="#6ab9ff"/>
+ <path d="M503 572 H820 V630 H950" stroke="#f2d45d"/>
+ <path d="M503 612 H865 V680 H950" stroke="#ff9d58"/>
+</g>
+<!-- power label overlays -->
+<rect x="515" y="228" width="355" height="34" rx="8" fill="#0a1c2a" stroke="#ff5d67"/>
+<text x="528" y="251" class="small" style="fill:#ff969b">VIN/5V → LCD VCC</text>
+<rect x="515" y="268" width="355" height="34" rx="8" fill="#0a1c2a" stroke="#aab8c5"/>
+<text x="528" y="291" class="small">GND → LCD GND (common ground)</text>
+<rect x="515" y="308" width="355" height="34" rx="8" fill="#0a1c2a" stroke="#48d7a4"/>
+<text x="528" y="331" class="small" style="fill:#8bf0c9">GPIO21 → LCD SDA</text>
+<rect x="515" y="348" width="355" height="34" rx="8" fill="#0a1c2a" stroke="#6ab9ff"/>
+<text x="528" y="371" class="small" style="fill:#9dd2ff">GPIO22 → LCD SCL</text>
+<rect x="515" y="475" width="355" height="34" rx="8" fill="#0a1c2a" stroke="#ff5d67"/>
+<text x="528" y="498" class="small" style="fill:#ff969b">VIN/5V → HC-SR04 VCC</text>
+<rect x="515" y="515" width="355" height="34" rx="8" fill="#0a1c2a" stroke="#aab8c5"/>
+<text x="528" y="538" class="small">GND → HC-SR04 GND</text>
+<rect x="515" y="555" width="355" height="34" rx="8" fill="#0a1c2a" stroke="#f2d45d"/>
+<text x="528" y="578" class="small" style="fill:#f7e790">GPIO25 → TRIG</text>
+<rect x="515" y="595" width="355" height="34" rx="8" fill="#0a1c2a" stroke="#ff9d58"/>
+<text x="528" y="618" class="small" style="fill:#ffc08e">ECHO → divider → GPIO26</text>
+<!-- Bottom wiring table -->
+<rect x="45" y="785" width="915" height="290" rx="18" fill="#10283a" stroke="#31536b" stroke-width="2"/>
+<text x="72" y="825" class="heading">Pin map</text>
+<rect x="67" y="844" width="870" height="38" rx="6" fill="#1a3c54"/>
+<text x="82" y="869" class="tablehead">ESP32 pin</text><text x="320" y="869" class="tablehead">Connect to</text><text x="590" y="869" class="tablehead">Important detail</text>
+<g stroke="#2a4b61" stroke-width="1"><path d="M67 919H937 M67 956H937 M67 993H937 M67 1030H937"/></g>
+<g class="tablerow">
+ <text x="82" y="906">VIN / 5V</text><text x="320" y="906">LCD VCC + sensor VCC</text><text x="590" y="906">Power only if board VIN supplies 5V</text>
+ <text x="82" y="943">GND</text><text x="320" y="943">All module GNDs</text><text x="590" y="943">All grounds must be common</text>
+ <text x="82" y="980">GPIO21 / GPIO22</text><text x="320" y="980">LCD SDA / SCL</text><text x="590" y="980">Check 5V pull-ups; use I2C level shifter if needed</text>
+ <text x="82" y="1017">GPIO25 / GPIO26</text><text x="320" y="1017">HC-SR04 TRIG / ECHO</text><text x="590" y="1017">ECHO requires 1k/2k voltage divider</text>
+ <text x="82" y="1054">Bluetooth LE</text><text x="320" y="1054">Android phone, wireless</text><text x="590" y="1054">No extra physical wire for BLE</text>
+</g>
+<!-- divider panel -->
+<rect x="990" y="785" width="565" height="290" rx="18" fill="#10283a" stroke="#31536b" stroke-width="2"/>
+<text x="1018" y="825" class="heading">ECHO voltage divider</text>
+<text x="1018" y="858" class="body">HC-SR04 ECHO is a 5V signal.</text>
+<text x="1018" y="885" class="body">Do not connect it directly to ESP32 GPIO26.</text>
+<g fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M1030 934 H1122" stroke="#ff9d58"/><path d="M1180 934 H1245" stroke="#ff9d58"/><path d="M1245 934 H1445" stroke="#ff9d58"/>
+ <path d="M1245 934 V991" stroke="#c6d1da"/><path d="M1209 991 H1281 M1221 1001 H1269 M1233 1011 H1257" stroke="#c6d1da"/>
+</g>
+<rect x="1122" y="920" width="58" height="28" rx="5" fill="#344c5c" stroke="#d7e6ee" stroke-width="2"/>
+<text x="1151" y="912" text-anchor="middle" class="small">1 kΩ</text>
+<circle cx="1245" cy="934" r="6" fill="#f2d45d"/>
+<text x="1028" y="921" class="small" style="fill:#ffc08e">ECHO 5V</text>
+<text x="1285" y="921" class="small" style="fill:#ffc08e">GPIO26 ≈ 3.3V</text>
+<text x="1245" y="1041" text-anchor="middle" class="small">Node to GND through 2 kΩ</text>
+</svg>
